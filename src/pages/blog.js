@@ -4,6 +4,8 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 
 import Layout from "./../components/layout"
 import * as blogsStyle from "./../styles/blogs.module.scss"
+import Head from "./../components/helmet"
+
 
 const BlogPage = () => {
 
@@ -30,6 +32,7 @@ const BlogPage = () => {
 
   return (
     <Layout>
+      <Head title="Blogs"/>
       <div>
         <h2>This is Blog Page.</h2>
         <p>

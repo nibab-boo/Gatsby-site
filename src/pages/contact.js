@@ -1,10 +1,12 @@
 import React from "react";
 
 import Layout from "./../components/layout";
+import Head from "./../components/helmet"
 
 const ContactPage = () => {
   return (
     <Layout>
+      <Head title="contact" />
       <div>
         <h2>
           Hello, Here is how to contact me.

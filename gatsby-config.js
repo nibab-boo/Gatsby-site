@@ -16,6 +16,7 @@ module.exports = {
     author: "Babin Bohora",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-contentful",
       options: {
