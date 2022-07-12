@@ -9,16 +9,17 @@ const BlogPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allContentfulBlogPost (
+        sort: {
+          fields: publishedDate,
+          order: DESC
+        }
+      ) {
         edges {
           node {
-            fields {
-              slug
-            }
-            frontmatter {
-              date
-              title
-            }
+            title,
+            publishedDate(formatString: "MMMM Do, YYYY"),
+            slug
           }
         }
       }
@@ -36,15 +37,15 @@ const BlogPage = () => {
         </p>
         <ol className={ blogsStyle.posts }>
           {
-            data.allMarkdownRemark.edges.map ((edge) => {
+            data.allContentfulBlogPost.edges.map ((edge) => {
               return (
-                <li key={ edge.node.frontmatter.title } className={blogsStyle.post}>
-                  <Link to={`/blog/${edge.node.fields.slug}`}>
+                <li key={ edge.node.title } className={blogsStyle.post}>
+                  <Link to={`/blog/${edge.node.slug}`}>
                     <h2>
-                      { edge.node.frontmatter.title }
+                      { edge.node.title }
                     </h2>
                     <p>
-                      { edge.node.frontmatter.date }
+                      { edge.node.publishedDate }
                     </p>
                   </Link>
                 </li>
