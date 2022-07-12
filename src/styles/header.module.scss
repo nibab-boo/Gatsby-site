@@ -1,0 +1,31 @@
+.link {
+  color: #999;
+  text-decoration: none;
+  &:hover {
+    color: rgb(104, 43, 43);
+   }
+}
+
+.header {
+  padding: 1rem 0 3rem;
+}
+
+.title {
+  color: black;
+  font-size: 3rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding-right: 20px;
+  }
+}
+
+.active-link {
+  color: rgb(104, 43, 43);
+}
