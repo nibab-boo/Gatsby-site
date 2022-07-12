@@ -1,5 +1,6 @@
 const path = require('path');
 
+// add nodeField(slug) to node(file)
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
@@ -16,6 +17,7 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 }
 
+// create page with slug
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
