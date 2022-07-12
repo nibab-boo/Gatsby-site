@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+//  GATSBY_GRAPHQL_IDE=playground
+
  require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
